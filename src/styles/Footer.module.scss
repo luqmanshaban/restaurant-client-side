@@ -67,6 +67,7 @@ background-color: lighten($color: $secondary, $amount: 10%);
 
         .art1, .art2,.art3 {
             width: 100%;
+            p{text-align: start};
         }
     }
 }
