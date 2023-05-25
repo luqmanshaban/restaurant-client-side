@@ -1,0 +1,57 @@
+
+
+.form {
+    position: relative;
+    opacity: 0.4;
+    animation: form 1.3s ease forwards;
+}
+@keyframes form {
+    from {
+        opacity: 0.4;
+        top: -20px;
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+
+.condition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.condition p {
+    background-color: greenyellow;
+    padding: 10px;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    width: 300px;
+    color: black;
+    animation: cpar 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+
+
+@keyframes cpar {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        display: none;
+    }
+
+}
+
+
+

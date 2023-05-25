@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import styles from '../../styles/Main.module.scss'
 import Data from '../../Data'
 import Cart  from '@mui/icons-material/ShoppingCartOutlined'
-import { GridList, GridListTile } from '@material-ui/core';
+import {  ImageListItem } from '@material-ui/core';
+import ImageList  from '@material-ui/core/ImageList';
 import Add from '@mui/icons-material/Add'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
@@ -57,9 +58,9 @@ const FoodMenu = () => {
 
       <motion.section id={styles.food} ref={articleRef} initial='hidden' animate={artcilceControls} variants={articleVariations}>
         <div style={{ overflow: 'hidden' }}>
-          <GridList cols={getGridCols()} cellHeight={cellHeight()} style={{ flexWrap: 'nowrap', }} id={styles.grid}>
+          <ImageList cols={getGridCols()} rowHeight={cellHeight()} style={{ flexWrap: 'nowrap', }} id={styles.grid}>
             {topPick.map((food, index) => (
-              <GridListTile key={index} id={styles.artc}>
+              <ImageListItem key={index} id={styles.artc}>
                 <motion.article className={styles.artc} >
                   <span id={styles.cart}>
                     <Cart />
@@ -72,9 +73,9 @@ const FoodMenu = () => {
                   </p>
                   <button id={styles.addToCart}>Add To Cart</button>
                 </motion.article>
-              </GridListTile>
+              </ImageListItem>
             ))}
-          </GridList>
+          </ImageList>
         </div>
       </motion.section>
     </section>
