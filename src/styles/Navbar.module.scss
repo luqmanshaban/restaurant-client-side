@@ -1,0 +1,244 @@
+//
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=DM+Sans&family=Signika+Negative:wght@300&display=swap');
+
+//
+
+$primary: #ffffff;
+$secondary: #FFA500;
+$text: #573B07;
+
+
+@mixin flex($justify){
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+
+
+//Default styles
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Cabin', sans-serif;
+    color: $text;
+}
+
+p, span, label {
+    font-family: 'DM Sans', sans-serif;
+}
+
+a, button , input, li{
+    font-family: 'Signika Negative', sans-serif;
+    cursor: pointer;
+}
+
+a,.link {
+    text-decoration: none;
+    color: $text;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.navbar {
+    @include flex(space-between);
+    background-color: $primary;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 16px 20px 0 rgba(0, 0, 0, 0.19);
+    min-height: 70px;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    animation: navbar 0.7s ease forwards;
+    opacity: 0;
+    padding: 20px 100px;
+    
+        // logo //
+        .logo {
+            @include flex(flex-start);
+            gap: 10px;
+    
+           span {
+            font-size: 25px;
+           }
+        }
+
+        @keyframes navbar {
+            from {
+                top: -20px;
+                opacity: 0;
+            }
+            to{
+                top: 0;
+                opacity: 1
+            }
+        }
+
+
+//nav Links
+    .rightNav {
+        @include flex(space-between);
+        gap: 50px;
+
+        #signup {
+            border-radius: 20px;
+            padding: 10px 30px;
+            color: lighten($color: $text, $amount: 70%);
+            background-color: $secondary;
+            text-align: center;
+            transition: 0.5s ease;
+            font-weight: bold;
+
+            &:hover {
+                background-color: $primary;
+            }
+        }
+        #login {
+            border-radius: 20px;
+            padding: 10px 30px;
+            background-color: $text;
+            color: lighten($color: $secondary, $amount: 20%);
+            font-weight: bold;
+
+
+            &:hover {
+                background-color: $primary;
+                color: darken($color: $secondary, $amount: 20%);
+            }
+        }
+
+    }
+    .navMenu {
+        @include flex(space-between);
+        gap: 80px;
+      
+        .navItem {
+          .navLink {
+            font-weight: lighter;
+            padding: 5px 10px;
+            transition: 0.5s ease;
+            color: $text;
+            font-weight: bold;
+          }
+      
+          .navLink:hover {
+            color:  darken($color: $secondary, $amount: 10%);
+          }
+      
+          &.active {
+            text-decoration: underline 2px;
+            color:  darken($color: $secondary, $amount: 20%) !important;
+            text-underline-offset: 10px;
+            text-decoration-color: $secondary;
+            scale: 1.1;
+          }
+        }
+      }
+      
+    .hamburger {
+        display: none;
+        cursor: pointer;       
+    }
+}
+
+
+//media query
+@media screen and (max-width: 800px) {
+    .navbar {
+        padding: 0 10px;
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+
+        .logo {
+            span{
+                font-size: 25px;
+            }
+        }
+        .hamburger {
+            display: block;
+            cursor: pointer;
+
+            .bar1 {
+                background-color: #120f0b;
+                width: 25px;
+                height: 3px;
+                display: block;
+                margin: 5px;
+                -webkit-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+                transform-origin: right center;
+                &.active {
+                    transform: translateY(12px) rotate(45deg);
+                }
+            }
+            .bar2 {
+                background-color: #120f0b;
+                width: 25px;
+                height: 3px;
+                display: block;
+                margin: 5px;
+                -webkit-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+                transform-origin: right center;
+                &.active {
+                   opacity: 0;
+                }
+            }
+            .bar3 {
+                background-color: #120f0b;
+                width: 25px;
+                height: 3px;
+                display: block;
+                margin: 5px;
+                -webkit-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+                &.active {
+                    transform: translateY(-12px) rotate(-45deg);
+                }
+            }        
+        }
+        .navMenu {
+            position: fixed;
+            flex-direction: column;
+            left: -200%;
+            top: 70px;
+            background-color: lighten($color: $secondary, $amount: 20%);
+             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 16px 20px 0 rgba(0, 0, 0, 0.19);
+            width: 80%;
+            padding: 80px 0 500px 0;
+            -webkit-transition: 0.3s ease-in-out;
+            transition: 0.3s ease-in-out;
+            &.isactive {
+                left: 0;
+            }
+
+            li {
+                a {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .rightNav {
+            position: fixed;
+            flex-direction: column;
+            left: -200%;
+            top: 440px;
+            -webkit-transition: 0.7s ease-in-out;
+            transition: 0.3s ease-in-out;
+            &.isactive {
+                left: 25%;
+            }
+            a {
+                color: $primary;
+            }
+        }
+        #cart {
+            position: fixed;
+            left: 250px;
+            top: 15px;
+        }
+    }
+}
+
+
