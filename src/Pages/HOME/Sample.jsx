@@ -6,6 +6,7 @@ import { GridList, GridListTile } from '@material-ui/core';
 import Add from '@mui/icons-material/Add'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { Link } from 'react-router-dom';
 
 const h1Variations = {
     hidden: {opacity: 0, y: 100},
@@ -14,13 +15,17 @@ const h1Variations = {
 
 const articleVariations = {
     hidden: {opacity: 0, y: 100},
-    visible: {opacity: 1, y: -50, transition: {duration: 0.5}}
+    visible: {opacity: 1, y: -100, transition: {duration: 0.5}}
 }
 
+//adjust on small screens
 function getGridCols() {
-    return window.innerWidth >= 800 ? 3 : 1;
+    return window.innerWidth >= 800 ? 3 : 1.2;
   }
 
+  function cellHeight() {
+    return window.innerWidth >= 800 ? 400 : 320;
+  }
   
 const FoodMenu = () => {
     const {topPick} = Data;
@@ -42,15 +47,17 @@ const FoodMenu = () => {
         }
       },[artcilceControls, artcleInView]
       )
+
   return (
     <section className={styles.main}>
-      <motion.h1 ref={h1Ref} initial='hidden' animate={h1Controls} variants={h1Variations}>
-        Top Picks
-      </motion.h1>
+      <motion.article id={styles.header} ref={h1Ref} initial='hidden' animate={h1Controls} variants={h1Variations}>
+        <h1>Top Picks</h1>
+        <Link to='/menu'>View Full menu</Link>
+      </motion.article>
 
       <motion.section id={styles.food} ref={articleRef} initial='hidden' animate={artcilceControls} variants={articleVariations}>
         <div style={{ overflow: 'hidden' }}>
-          <GridList cols={getGridCols()} cellHeight={400} style={{ flexWrap: 'nowrap', }} id={styles.grid}>
+          <GridList cols={getGridCols()} cellHeight={cellHeight()} style={{ flexWrap: 'nowrap', }} id={styles.grid}>
             {topPick.map((food, index) => (
               <GridListTile key={index} id={styles.artc}>
                 <motion.article className={styles.artc} >

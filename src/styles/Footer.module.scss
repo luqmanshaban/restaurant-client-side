@@ -54,7 +54,7 @@ $text: #573B07;
 
 @media screen and (max-width: 800px) {
 #footer{ 
-background-color: lighten($color: $secondary, $amount: 10%);
+background-color: darken($color: $secondary, $amount: 85%);
 }
     .footer {
         padding: 10px;
@@ -67,7 +67,12 @@ background-color: lighten($color: $secondary, $amount: 10%);
 
         .art1, .art2,.art3 {
             width: 100%;
-            p{text-align: start};
+           h1, p, a {
+            color: darken($color: $secondary, $amount: 10%);
+           }
+        }
+        #icons {
+            color: darken($color: $secondary, $amount: 10%);
         }
     }
 }

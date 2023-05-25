@@ -37,7 +37,7 @@ const Footer = () => {
     <motion.section className={styles.footer} >
         <article className={styles.art1}>
             <h1>Swahili Plate</h1>
-            <p>A restaurant that offers an authentic taste of Swahili cuisine.With a menu full of flavorful dishes.</p>
+            <p style={{textAlign: 'start'}}>A restaurant that offers an authentic taste of Swahili cuisine.With a menu full of flavorful dishes.</p>
         </article>
         <article className={styles.art2}>
             <h1>Address</h1>
@@ -49,11 +49,11 @@ const Footer = () => {
         <article className={styles.art3}>
             <h1>Get In Touch</h1>
                <figure className={styles.call}>
-                   {<AddIcCallIcon color='tertiary'/>}
+                   {<AddIcCallIcon id={styles.icons} color='tertiary'/>}
                    <p><a href="tel:0772435765">Town</a></p>
                 </figure>
                 <figure className={styles.call}>
-                   {<AddIcCallIcon color='tertiary'/>}
+                   {<AddIcCallIcon id={styles.icons} color='tertiary'/>}
                    <p><a href="tel:0773497954">WestLands</a></p>
                 </figure>
         </article>
@@ -70,7 +70,7 @@ const Footer = () => {
         </article>
     </motion.section>
         <hr />
-          <p style={{textAlign: 'center'}}>&copy; All rights reserved | swahili Plate <span>{date}</span></p>
+          <p id={styles.p} style={{textAlign: 'center'}}>&copy; All rights reserved | swahili Plate <span>{date}</span></p>
     </motion.div>
   )
 }
