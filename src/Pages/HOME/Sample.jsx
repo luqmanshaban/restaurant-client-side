@@ -13,7 +13,6 @@ const h1Variations = {
     hidden: {opacity: 0, y: 100},
     visible: {opacity: 1, y: -40, transition: {duration: 0.5}}
 }
-
 const articleVariations = {
     hidden: {opacity: 0, y: 100},
     visible: {opacity: 1, y: -100, transition: {duration: 0.5}}
@@ -23,7 +22,6 @@ const articleVariations = {
 function getGridCols() {
     return window.innerWidth >= 800 ? 3 : 1.2;
   }
-
   function cellHeight() {
     return window.innerWidth >= 800 ? 400 : 320;
   }
@@ -61,7 +59,7 @@ const FoodMenu = () => {
           <ImageList cols={getGridCols()} rowHeight={cellHeight()} style={{ flexWrap: 'nowrap', }} id={styles.grid}>
             {topPick.map((food, index) => (
               <ImageListItem key={index} id={styles.artc}>
-                <motion.article className={styles.artc} >
+                <motion.article className={styles.artc}>
                   <span id={styles.cart}>
                     <Cart />
                     <Add sx={{ fontSize: '15px', position: 'relative', top: '-20px', right: '10px' }} />

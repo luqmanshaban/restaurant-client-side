@@ -39,6 +39,10 @@ $text: #573B07;
     }
 }
 
+#grid::-webkit-scrollbar {
+    opacity: 0;
+  }
+
 #food {
     display: flex;
     gap: 50px;

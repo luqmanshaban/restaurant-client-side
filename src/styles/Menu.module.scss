@@ -1,0 +1,13 @@
+
+.menu {
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .menu {
+        padding: 10px;
+    }
+}
