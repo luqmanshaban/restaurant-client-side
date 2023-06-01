@@ -1,13 +1,148 @@
 
+$primary: #ffffff;
+$secondary: #FFA500;
+$text: #573B07;
+
 .menu {
     padding: 50px 100px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
+
+    #grid::-webkit-scrollbar {
+        opacity: 0;
+      }
+
+      #search {
+          padding: 10px !important;
+          height: 50px !important;
+          background-color: $primary;
+          border: 2px solid $secondary;
+          border-radius: 10px;
+          margin: 10px 0;
+          width: 50%;
+          font-size: 16px;
+      }
+
+      #search:focus {
+        font-size: 1em;
+        zoom: 1;
+        border: 1px solid $secondary !important;
+      }
+      
+    .foodType {
+        margin: 0 0 50px 0;
+        gap: 30px;
+        ul {
+            display: flex;
+            gap: 100px;
+
+            li {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: $text;
+
+                &.active {
+                    color: $text !important;
+                }
+            }
+            
+            button {
+                background-color: #f5b236;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                color: $text;
+                border: none;
+                &.active {
+                    background-color: #f1d49c !important;
+                    border: 1px solid $secondary;
+                }
+            }
+        }
+    }
 }
 
+#cart {
+    position: relative;
+    top: 70px;
+    left: 800px;
+    background-color: $primary;
+    border: none;
+    width: 50px;
+    cursor: pointer;
+}
+
+.closeButton {
+    display: none;
+}
+
+
 @media screen and (max-width: 800px) {
-    .menu {
-        padding: 10px;
+    #cart {
+        top: 65px;
+        left: 300px !important;
     }
+    .menu {
+        padding: 70px 10px;
+        #search {
+            margin: 10px 0;
+            width: 80% !important;
+        }
+
+        .foodType {
+            margin: 0;
+            flex-direction: column-reverse;
+            gap: 5px;
+            padding: 0 20px;
+
+
+            li {
+                font-size: 15px;
+                color: blue;
+            }
+        }
+
+    }
+
+    .cartModal {
+        position: fixed;
+        z-index: 9999;
+        top: 50px;
+        left: 0;
+        width: 100% !important;
+        height: 300px;
+        // background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      
+      .modalContent {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 30px 20px;
+        border-radius: 8px;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      .closeButton {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        position: absolute;
+        top: 35px;
+        right: 40px;
+        display: block;
+      }
+      
 }

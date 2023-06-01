@@ -10,48 +10,16 @@ $text: #573B07;
     align-items: center;
 }
 
-.main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 70px;
-    padding: 0 100px;
-    margin: 0 !important;
-    #header{
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 0 10px;
-        margin-bottom: 60px;
-        
-        h1 {
-            font-family: 'Zilla Slab', serif;
-            text-decoration: underline;
-            text-underline-offset: 20px;
-            text-align: center;
-        }
-        a{
-            position: relative;
-            top: 50px;
-            display: none;
-            left: 150px;
-            color: blue;
-            text-decoration: underline;
-        }
-    }
-}
+
 
 #grid::-webkit-scrollbar {
     opacity: 0;
   }
 
-#food {
-    display: flex;
-    gap: 50px;
-    // flex-wrap: wrap;
-}
+  #h1 {
+    margin: 10px 0;
+  }
+
 
 img {
     height: 120px;
@@ -63,13 +31,15 @@ img {
 }
 
 
+#topPick {
+    margin: 100px 0;
+}
+
 .artc {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 16px 20px 0 rgba(0, 0, 0, 0.19);
     width: 300px;
-    height: 200px;
-    margin-top: 200px;
+    height: 250px;
     text-align: center;
-    margin: 40px 0;
     border-radius: 0 20px 0 20px;
     position: relative;
     top: 100px;
@@ -83,8 +53,9 @@ img {
     } 
     h1 {
         margin-top: 30px ;
-        font-weight: bold;
-        color: $text;
+        font-weight: bolder;
+        margin-bottom: 10px;
+        color: darken($color: $text, $amount: 20%);
         position: relative;
         top: -100px;
         text-decoration: none;
@@ -97,36 +68,44 @@ img {
         font-weight: lighter;
         color: $text;
     }
+
+    .counter {
+        padding: 10px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        top: -100px;
+
+        button {
+            border-radius: 50%;
+            padding: 3px;
+            border: 1px solid $secondary;
+            background-color: $secondary;
+        }
+
+        span {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+
     #addToCart {
         padding: 10px 20px;
         width: 100%;
-        background-color: lighten($color: $secondary, $amount: 10%);
-        color: black;
+        background-color: darken($color: $secondary, $amount: 50%);
+        color: $secondary;
         font-size: 16px;
         border: none;
         border-radius: 0 20px 0 20px;
         position: relative;
-        top: -80px;
+        top: -70px;
     }
 }
 
 
 @media screen and (max-width: 800px) {
 
-    .main {
-        padding: 0 0px;
-
-        #header {
-            margin: 20px 0;
-            h1 {
-                text-align: start;
-            }
-            a {
-                right: -120px;
-                top: 60px;
-            }
-        }
-    }
     #food {
         padding: 0 0px;
     }
@@ -135,14 +114,21 @@ img {
         width: 100px;
         top: -60px;
     }
+   #h1 {
+    margin: 0 !important;
+   }
     .artc {
-        margin: 0 0px 0px 10px;
+        margin: 0px 0px 0px 10px !important;
         width: 70%;
+        height: 250px;
 
         h1 {
             top: -70px ;
         }
         p {
+            top: -50px;
+        }
+        .counter {
             top: -50px;
         }
         #addToCart {

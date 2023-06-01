@@ -72,9 +72,7 @@ const Header = () => {
         
         <article id={styles.art2}>
         <motion.p id={styles.p2} initial='hidden' animate='visible' variants={pVariations}><span>Swahili Plate is </span>a restaurant that offers an authentic taste of Swahili cuisine <span>. From aromatic biryanis and pilafs to succulent grilled meats and seafood</span>, each dish is prepared with the perfect blend of spices and ingredients to tantalize your taste buds.</motion.p>
-        <motion.button id={styles.signup} initial='hidden' animate='visible' variants={btnVariations}>
-              <Link className={styles.link} to='/menu'>Order Now</Link>
-            </motion.button>
+            <Link className={styles.link} to='/menu'  id={styles.signup} >Order Now</Link>
             <section id={styles.social}>
                 <motion.a href='https://www.facebook.com/swahiliplate/' target='_blank' rel='noreferrer'
                  initial='hidden' animate='visible' variants={fbVariations}

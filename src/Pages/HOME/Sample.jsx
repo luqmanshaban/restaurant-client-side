@@ -60,7 +60,7 @@ const FoodMenu = () => {
             {topPick.map((food, index) => (
               <ImageListItem key={index} id={styles.artc}>
                 <motion.article className={styles.artc}>
-                  <span id={styles.cart}>
+                  <span id={styles.cart} style={{opacity: 0}}>
                     <Cart />
                     <Add sx={{ fontSize: '15px', position: 'relative', top: '-20px', right: '10px' }} />
                   </span>
@@ -69,7 +69,7 @@ const FoodMenu = () => {
                   <p>
                     Price: <br /> Ksh {food.price}
                   </p>
-                  <button id={styles.addToCart}>Add To Cart</button>
+                  <Link to='/menu' id={styles.addToCart}>View Menu</Link>
                 </motion.article>
               </ImageListItem>
             ))}

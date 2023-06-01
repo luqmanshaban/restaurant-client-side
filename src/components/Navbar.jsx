@@ -1,27 +1,9 @@
 
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
-import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import Button from '@mui/material/Button';
-import {  createTheme,ThemeProvider } from '@mui/system';
 //
 import styles from '../styles/Navbar.module.scss';
-
-//Mui
-const theme = createTheme( {
-    palette: {
-        primary: {
-            main: '#e78d26'
-        },
-        secondary: {
-            main: '#fbf8f2'
-        },
-        tertiary: {
-            main: '#563b13'
-        }
-    }
-})
-///
 
 
 
@@ -72,11 +54,6 @@ function Navbar() {
           </li>
         </ul>
        <ul className={`${styles.rightNav} ${isActive ? styles.isactive : ''} `} >
-        <li id={styles.cart}>
-          <ThemeProvider theme={theme}>
-            <ShoppingCart color='primary' sx={{cursor: 'pointer', fontSize: '30px', marginTop: '10px','&:hover': { scale: '1.2'}, transition: '0.3s ease' }}/>
-          </ThemeProvider>
-        </li>
           <li className={`${styles.navItem}  `} onClick={handleLinkClick}>
             <Button id={styles.signup}  variant='contained' >
               <Link className={styles.link} to='/signup'>Sign Up</Link>

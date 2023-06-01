@@ -5,6 +5,7 @@ import './App.css'
 import { Route, Routes } from "react-router-dom";
 import Landing from "./Pages/HOME/Landing";
 import Menu from "./components/menu/Menu";
+import Contact from "./components/Contact";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/menu" Component={Menu} />
         <Route path="/login" Component={Login} />
         <Route path="/signup" Component={Signup} />
+        <Route path="/contact" Component={Contact} />
       </Routes>
     </div>
   );

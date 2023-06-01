@@ -7,8 +7,8 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer'
 
 const footerVariations = {
-    hidden: {opacity: 0, y: 250},
-    visible: {opacity: 1, y : 10, transition: {duration: 0.5}}
+    hidden: {opacity: 0},
+    visible: {opacity: 1, transition: {duration: 0.5}}
 }
 const fbVariations = {
     hidden: {opacity: 0, y: 100, x: -150},
