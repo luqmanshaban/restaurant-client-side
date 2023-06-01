@@ -11,15 +11,6 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 
 
-const h1Variations = {
-    hidden: {opacity: 0, y: 100},
-    visible: {opacity: 1, y: -40, transition: {duration: 0.5}}
-}
-const articleVariations = {
-    hidden: {opacity: 0, y: 100},
-    visible: {opacity: 1, y: -100, transition: {duration: 0.5}}
-}
-
 //adjust on small screens
 function getGridCols() {
     return window.innerWidth >= 800 ? 4 : 1.2;
@@ -27,8 +18,6 @@ function getGridCols() {
 function cellHeight() {
     return window.innerWidth >= 800 ? 400 : 400;
 }
-  
-
 
 
 const TopPick = ({addToCart}) => {
